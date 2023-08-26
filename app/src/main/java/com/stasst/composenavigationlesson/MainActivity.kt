@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.stasst.composenavigationlesson.screens.DetailsScreen
 import com.stasst.composenavigationlesson.screens.ListScreen
 import com.stasst.composenavigationlesson.screens.PushScreen
 import com.stasst.composenavigationlesson.screens.SearchScreen
@@ -42,10 +43,11 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     ) {padding ->
-                        NavHost(startDestination = "List", navController = navController){
-                            composable("List"){ ListScreen() }
+                        NavHost(startDestination = "List", navController = navController, modifier = Modifier.padding(0.dp)){
+                            composable("List"){ ListScreen(navController) }
                             composable("Search"){ SearchScreen() }
                             composable("Push"){ PushScreen() }
+                            composable("Details") { DetailsScreen() }
                         }
                     }
                 }
