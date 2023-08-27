@@ -8,8 +8,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(
+    name: String?
+) {
     Scaffold { padding ->
-        Text("List Screen -> Details Screen", modifier = Modifier.padding(24.dp))
+        Text("$name details", modifier = Modifier.padding(24.dp))
     }
 }

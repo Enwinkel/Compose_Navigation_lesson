@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.stasst.composenavigationlesson.util.Screen
 
 data class Word(val value: String)
 
@@ -22,7 +23,7 @@ fun ListScreen(
     Scaffold { padding ->
         LazyColumn {
             testArray.map {item {Text(it, modifier = Modifier.padding(24.dp).fillMaxWidth().clickable {
-                navController.navigate("Details")
+                navController.navigate(Screen.DetailsScreen.passName(it))
             })}}
         }
     }
